@@ -1,5 +1,8 @@
+import static java.lang.System.*;
+
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+        long time = System.currentTimeMillis();
         SAW[] threads = new SAW[Variable.threadCount];
 
         for (int thread = 0; thread < Variable.threadCount; thread++) {
@@ -31,5 +34,7 @@ public class Main {
                         + Variable.data[1][step]);
             }
         }
+        time = System.currentTimeMillis() - time;
+        System.out.println(time);
     }
 }
